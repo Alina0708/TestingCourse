@@ -1,8 +1,9 @@
-const { PassengerPlane } = require("./planes/PassengerPlane");
-const { MilitaryPlane } = require("./planes/MilitaryPlane");
-const { ExperimentalPlane } = require("./planes/ExperimentalPlane");
-const { MILITARY_TYPE } = require("./models/MilitaryType");
+const { PassengerPlane } = require('./planes/PassengerPlane');
+const { MilitaryPlane } = require('./planes/MilitaryPlane');
+const { ExperimentalPlane } = require('./planes/ExperimentalPlane');
+const { MILITARY_TYPE } = require('./models/MilitaryType');
 
+//laba6git
 class Airport {
   constructor(planes) {
     this.planes = planes;
@@ -18,23 +19,17 @@ class Airport {
 
   getPassengerPlaneWithMaxPassengersCapacity() {
     const passengerPlanes = this.getPassengerPlanes();
-    return passengerPlanes.sort(
-      (a, b) => b.passengersCapacity - a.passengersCapacity
-    )[0];
+    return passengerPlanes.sort((a, b) => b.passengersCapacity - a.passengersCapacity)[0];
   }
 
   getTransportMilitaryPlanes() {
     let militaryPlanes = this.getMilitaryPlanes();
-    return militaryPlanes.filter(
-      (planes) => planes.getMilitaryType() == MILITARY_TYPE.TRANSPORT
-    );
+    return militaryPlanes.filter((planes) => planes.getMilitaryType() === MILITARY_TYPE.TRANSPORT);
   }
 
   getBomberMilitaryPlanes() {
     let militaryPlanes = this.getMilitaryPlanes();
-    return militaryPlanes.filter(
-      (planes) => planes.getMilitaryType() === MILITARY_TYPE.BOMBER
-    );
+    return militaryPlanes.filter((planes) => planes.getMilitaryType() === MILITARY_TYPE.BOMBER);
   }
 
   getExperimentalPlanes() {
@@ -42,18 +37,26 @@ class Airport {
   }
 
   sortByMaxDistance() {
-    let maxDistance = this.planes.sort((a, b) => (a.getMaxFlightDistance() > b.getMaxFlightDistance()) ? "distance1 > distance2" : "distance1 < distance2");
-        return maxDistance;
+    let maxDistance = this.planes.sort((a, b) =>
+      a.getMaxFlightDistance() > b.getMaxFlightDistance() ? 'distance1 > distance2' : 'distance1 < distance2',
+    );
+    return maxDistance;
   }
 
   sortByMaxSpeed() {
-    let maxSpeed = this.planes.sort((a, b) => (a.getMaxSpeed() > b.getMaxSpeed()) ? "speed1 > speed2" : "speed1 < speed2");
-        return maxSpeed;
+    let maxSpeed = this.planes.sort((a, b) =>
+      a.getMaxSpeed() > b.getMaxSpeed() ? 'speed1 > speed2' : 'speed1 < speed2',
+    );
+    return maxSpeed;
   }
 
   sortByMaxLoadCapacity() {
-    let MaxLoadCapacity = this.planes.sort((a, b) => (a.getMaxLoadCapacity() > b.getMaxLoadCapacity()) ? "MaxLoadCapacity1 > MaxLoadCapacity2" : "MaxLoadCapacity1 < MaxLoadCapacity2");
-        return MaxLoadCapacity;
+    let MaxLoadCapacity = this.planes.sort((a, b) =>
+      a.getMaxLoadCapacity() > b.getMaxLoadCapacity()
+        ? 'MaxLoadCapacity1 > MaxLoadCapacity2'
+        : 'MaxLoadCapacity1 < MaxLoadCapacity2',
+    );
+    return MaxLoadCapacity;
   }
 }
 
