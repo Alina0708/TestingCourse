@@ -27,7 +27,7 @@ git push origin master --force`);
 
     // * Syntax Highlighting: "Bash"
     await driver.findElement(By.css(".toggle__control > label:nth-child(2)")).click();
-    await driver.findElement(By.xpath('(//span[@class="select2-selection__arrow"])[1]')).click();
+    await driver.findElement(By.xpath('//*[@id="select2-postform-format-container"]')).click();
     await driver.findElement(By.xpath('(//ul[@class="select2-results__options select2-results__options--nested"]/*[.="Bash"])[1]')).click();
     
     // * Paste Expiration: "10 Minutes"
@@ -74,7 +74,7 @@ git push origin master --force`);
    
 
     // Close the browser
-    // await driver.sleep(10000);
-    // await driver.quit();
+    await driver.sleep(100);
+    await driver.quit();
 }
 noNameYet();
