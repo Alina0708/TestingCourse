@@ -13,6 +13,7 @@ async function fieldSearch() {
    //3.	Ввести данные для поиска (КЕДЫ VANS old sсhool)
    //4.	Нажимаем enter;
     await driver.findElement(By.xpath("/html/body/div[3]/div[4]/form/div[1]/div[2]/div/div/div/input")).sendKeys("КЕДЫ VANS old sсhool", Key.ENTER);  
-
+    await driver.sleep(5000);
+    await driver.quit();
 }
 fieldSearch();

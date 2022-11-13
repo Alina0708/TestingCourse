@@ -3,7 +3,7 @@
 const { Builder, By, until } = require('selenium-webdriver');
 const assert = require('assert');
 
-async function noNameYet() {
+async function BringItOn() {
   // Open the browser
   let driver = await new Builder().forBrowser('chrome').build();
   await driver.get('https://pastebin.com');
@@ -118,4 +118,4 @@ git push origin master --force`
   await driver.sleep(5000);
   await driver.quit();
 }
-noNameYet();
+BringItOn();

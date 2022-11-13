@@ -1,7 +1,7 @@
 // I Can Win
 const {Builder, By, until} = require ('selenium-webdriver');
 
-async function noNameYet() {
+async function ICanWin() {
     // Открыть https://pastebin.com или аналогичный сервис в любом браузере
     let driver = await new Builder().forBrowser('chrome').build();
     await driver.get('https://pastebin.com');
@@ -24,4 +24,4 @@ async function noNameYet() {
     await driver.sleep(5000); // just to see that everything works
     await driver.quit();
 }
-noNameYet();
+ICanWin();
